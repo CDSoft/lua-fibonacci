@@ -11,6 +11,6 @@ So here is my own version...
 
 - the source code in LuaX: [fib.lua](fib.lua)
 - the source code of the document for Typst: [fib.typ](fib.typ)
-- the document rendered in PDF: [lua-fibonacci.pdf](lua-fibonacci.pdf)
+- the document rendered in PDF: [lua-fibonacci.pdf](http://cdelord.fr/pub/lua-fibonacci.pdf)
 
 See also an implementation in Haskell: <https://github.com/CDSoft/haskell-fibonacci>
