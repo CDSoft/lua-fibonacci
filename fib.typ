@@ -134,6 +134,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   ]
 )
 
+#pagebreak()
 
 = Faster implementation
 
@@ -283,9 +284,11 @@ $
   ]
 )
 
+#pagebreak()
+
 @@[[
   N = 10*1000
-  f = tostring(memo_fast_fib(N):unpack())
+  f = tostring(memo_fast_fib(N))
 ]]
 
 = $F_@N$
@@ -302,6 +305,8 @@ $F_@N = $ @@[===[
     : map(string.reverse)
     : unwords()
 ]===]
+
+#pagebreak()
 
 = References
 
