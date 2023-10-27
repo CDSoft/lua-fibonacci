@@ -10,3 +10,13 @@ rule typst
 
 build $builddir/fib.typ: ypp fib.typ | fib.lua
 build fib.pdf: typst $builddir/fib.typ
+
+######################################################################
+# Regenerate build.ninja when build.lua changes
+######################################################################
+
+rule bang
+  command = bang $quiet $in -o $out -- $args
+  generator = true
+
+build build.ninja: bang build.lua
