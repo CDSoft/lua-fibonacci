@@ -1,15 +1,8 @@
 var "builddir" ".build"
 
-rule "ypp" {
-    command = "ypp -l fib $in -o $out",
-    implicit_in = "fib.lua",
+local pdf = pipe {
+    rule "ypp.typ"   { command = "ypp -l fib $in -o $out", implicit_in = "fib.lua" },
+    rule "typst.pdf" { command = "typst compile $in $out" },
 }
 
-rule "typst" {
-    command = "typst compile $in $out",
-}
-
-build "fib.pdf" {
-    "typst",
-    build "$builddir/fib.typ" { "ypp", "fib.typ" },
-}
+pdf "fib.pdf" { "fib.typ" }
