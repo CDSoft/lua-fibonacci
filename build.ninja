@@ -5,12 +5,13 @@ ninja_required_version = 1.11.1
 builddir = .build
 
 rule ypp.typ
-  command = ypp -l fib $in -o $out
+  command = ypp -l fib --MF $depfile $in -o $out
+  depfile = $builddir/$out.d
 
 rule typst.pdf
   command = typst compile $in $out
 
-build $builddir/pipe/fib-pipe-1.typ: ypp.typ fib.typ | fib.lua
+build $builddir/pipe/fib-pipe-1.typ: ypp.typ fib.typ
 build fib.pdf: typst.pdf $builddir/pipe/fib-pipe-1.typ
 
 ######################################################################
