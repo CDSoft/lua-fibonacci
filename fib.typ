@@ -55,7 +55,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 = Fibonacci sequence
 
 #grid(
-  columns: (1fr, 1.2fr),
+  columns: (1fr, 1fr),
   gutter: 1em,
   [ The Fibonacci sequence is defined as:
 
@@ -67,7 +67,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     We will compare here some implementations in Lua.
   ],
   [ #table(
-      columns: (auto, auto, auto),
+      columns: (1fr, 1fr, 4fr),
       align: horizon,
       [$n$], [$F_n$], [Details],
       @F.range(0, 5):map(example)
@@ -78,7 +78,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 = Naive implementation
 
 #grid(
-  columns: (1fr, 1.2fr),
+  columns: (1fr, 1fr),
   gutter: 1em,
   [ ```lua
     function fib(n)
@@ -105,7 +105,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 = Linear implementation
 
 #grid(
-  columns: (1fr, 1.2fr),
+  columns: (1fr, 1fr),
   gutter: 1em,
   [ The naive implementation computes the same Fibonacci values several times.
     Memoization dramatically improves performances.
@@ -291,20 +291,15 @@ $
   f = tostring(memo_fast_fib(N))
 ]]
 
-= $F_@N$
+= Example: $F_@N$
 
 $F_@N$ contains $@(#f)$ digits.
 
-$F_@N = $ @@[===[
-  local ds = F{}
-  tostring(f)
-    : reverse()
-    : gsub("..?.?", function(d) ds[#ds+1] = d end)
-  return ds
-    : reverse()
-    : map(string.reverse)
-    : unwords()
-]===]
+$F_@N = $ @ f : reverse()
+              : matches "..?.?"
+              : reverse()
+              : map(string.reverse)
+              : unwords()
 
 #pagebreak()
 
