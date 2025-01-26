@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #set par(justify: true)
 
 #set text(
-  font: "Linux Libertine",
+  font: "Libertinus Serif",
   size: 11pt,
 )
 
@@ -38,7 +38,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   columns: (1fr),
   align(center)[
     Christophe Delord \
-    #link("http://cdelord.fr") \
     #link("https://github.com/CDSoft/lua-fibonacci") \
   ]
 )
