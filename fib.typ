@@ -47,7 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   *Abstract* \
   The Fibonacci sequence is a famous numerical sequence used to test algorithm performances.
   This paper briefly defines the Fibonacci sequence and compares some implementations.
-  The Fibonacci sequence is here just a pretext to test
+  The Fibonacci sequence is here just an excuse to test
   #link("http://cdelord.fr/ypp", "ypp") and #link("https://typst.app", "typst").
 ]
 
